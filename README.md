@@ -40,7 +40,7 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 - _full CRUD capabilities for the animals._
 - _Deployed backend through Heroku._
 - _Delpoyed frontend through Netlify._
-- _any user can view all animals on the homepage
+- _any user can view all animals on the homepage_
 
 <br>
 
