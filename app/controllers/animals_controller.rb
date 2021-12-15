@@ -47,7 +47,7 @@ class AnimalsController < ApplicationController
     end
 
     def set_user_animal
-      @animal = Animal.find(params[:id])
+      @animal = @current_user.animals.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
