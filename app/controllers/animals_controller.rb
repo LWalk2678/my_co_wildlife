@@ -1,14 +1,16 @@
 class AnimalsController < ApplicationController
-  before_action :set_animal, only: [:show, :update, :destroy]
+  before_action :set_animal, only: :show
+  before_action :authorize_request, only: :create
+  before_action :set_user_animal, only: [:update, :destroy]
 
-  # GET /animals
+  # GET /animals  - for main page to show all animals
   def index
     @animals = Animal.all
 
     render json: @animals
   end
 
-  # GET /animals/1
+  # GET /animals/1   - For details page
   def show
     render json: @animal
   end
@@ -16,9 +18,9 @@ class AnimalsController < ApplicationController
   # POST /animals
   def create
     @animal = Animal.new(animal_params)
-
+    @animal.user = @current_user
     if @animal.save
-      render json: @animal, status: :created, location: @animal
+      render json: @animal, status: :created
     else
       render json: @animal.errors, status: :unprocessable_entity
     end
@@ -41,6 +43,10 @@ class AnimalsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_animal
+      @animal = Animal.find(params[:id])
+    end
+
+    def set_user_animal
       @animal = Animal.find(params[:id])
     end
 
