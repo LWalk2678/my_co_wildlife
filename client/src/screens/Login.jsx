@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 export default function Login() {
   const [formData, setFormData] = useState({
@@ -16,8 +17,10 @@ export default function Login() {
   } 
 
   return (
-    <div>
+    <form>
+      <h3>Login</h3>
       <label>
+        Username:
         <input
           type='text'
           name='username'
@@ -26,6 +29,7 @@ export default function Login() {
         />
       </label>
       <label>
+        Password:
         <input
           type='password'
           name='password'
@@ -33,7 +37,8 @@ export default function Login() {
           onChange={handleChange}
         />
       </label>
+      <Link to='/register'>Register</Link>
       <button>Submit</button>
-    </div>
-  )
+    </form>
+  );
 }
