@@ -5,7 +5,8 @@ class AnimalsController < ApplicationController
 
   # GET /animals  - for main page to show all animals
   def index
-    @animals = @current_user.animals
+    #@animals = @current_user.animals
+    @animals = Animal.all
 
     render json: @animals
   end
