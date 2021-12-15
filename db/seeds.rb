@@ -20,4 +20,4 @@ Animal.create!(name: 'Big Horn Sheep', description: 'CSU mascot', seen: '12-1-20
 
 Animal.create!(name: 'Elk', description: 'Estes Park mascot', seen: '11-23-2021 at 2pm', notes: 'Saw a very large 8 by 8 buck at the River Condos in the Big Thompson Canyon on Hwy 34', image_url: 'https://www.pexels.com/photo/brown-deer-on-brown-grass-field-1472386/', user: @admin)
 
-puts "#{Animal.count) Anmimals created"
+puts "#{Animal.count} Anmimals created"
