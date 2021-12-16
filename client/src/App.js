@@ -8,7 +8,8 @@ import Register from './screens/Register';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
-  //let history = useHistory();
+  
+  //const history = useHistory();
 
   useEffect(() => {
     const handleVerify = async () => {
