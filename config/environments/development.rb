@@ -10,7 +10,7 @@ Rails.application.configure do
 
   # Added per postman
   #config.hosts << "localhost"
-  #config.hosts.clear
+  config.hosts.clear
 
   # Do not eager load code on boot.
   config.eager_load = false
