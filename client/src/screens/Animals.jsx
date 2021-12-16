@@ -9,7 +9,7 @@ export default function Animals({animals, handleAnimalDelete, currentUser}) {
       {animals.map((animal) => (
         <div key={animal.id} className="animal_list">
           <h4>{animal.name}</h4>
-          {currentUser.id === animal.user.id && (
+          {currentUser?.id === animal.user_id && (
             <>
               <Link to={`/animals/${animal.id}/edit`}>
             <button>Edit</button>

@@ -7,7 +7,7 @@ import { getAllAnimals, postAnimal, deleteAnimal, putAnimal } from '../services/
 
 export default function MainContainer({currentUser}) {
   const [animals, setAnimals] = useState([])
-  //const history = useHistory();
+  const history = useHistory();
   
   useEffect(() => {
     const fetchAnimals = async () => {
@@ -20,7 +20,7 @@ export default function MainContainer({currentUser}) {
   const handleAnimalCreate = async (formData) => {
     const newAnimal = await postAnimal(formData);
     setAnimals((prevState) => [...prevState, newAnimal]);
-    //history.push('/animals');
+    history.push('/animals');
   };
 
   const handleAnimalDelete = async (id) => {
@@ -33,7 +33,7 @@ export default function MainContainer({currentUser}) {
     setAnimals(prevState => prevState.map(animal => {
       return animal.id === Number(id) ? newAnimal : animal
     }))
-    //history.push('/animals');
+    history.push('/animals');
   }
 
   return (
