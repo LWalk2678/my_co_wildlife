@@ -12,10 +12,10 @@ export default function AnimalEdit({animals}) {
 
   const { name, description, seen, notes } = formData
   //const { id } = useParams();
-  
+    
   // useEffect(() => {
   //   const prefillFormData = () => {
-  //     const animalItem = animals.find(animal => animal.id === id)
+  //     const animalItem = animals.find(animal => animal.id === Number(id))
   //     setFormData({ name: animalItem.name, description: animalItem.description, seen: animalItem.seen, notes: animalItem.notes })
   //   };
   //   prefillFormData();
