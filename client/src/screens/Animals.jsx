@@ -8,7 +8,9 @@ export default function Animals({animals, handleAnimalDelete}) {
       {animals.map((animal) => (
         <div key={animal.id}>
           <h4>{animal.name}</h4>
-          <button>Edit</button>
+          <Link to={`/animals/${animal.id}/edit`}>
+            <button>Edit</button>
+          </Link>
           <button onClick={()=>handleAnimalDelete(animal.id)}>Delete</button>
         </div>
       ))}

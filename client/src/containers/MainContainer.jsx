@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Switch, Route, useHistory } from 'react-router-dom'
 import AnimalCreate from '../screens/AnimalCreate'
+import AnimalEdit from '../screens/AnimalEdit'
 import Animals from '../screens/Animals'
 import { getAllAnimals, postAnimal, deleteAnimal } from '../services/animal'
 
@@ -30,6 +31,9 @@ export default function MainContainer() {
   return (
     <div>
       <Switch>
+        <Route path='/animals/:id/edit'>
+          <AnimalEdit animals={animals}/>
+        </Route>
         <Route path='/animals/new'>
           <AnimalCreate handleAnimalCreate={handleAnimalCreate}/>
         </Route>
