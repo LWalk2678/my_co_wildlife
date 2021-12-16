@@ -2,6 +2,7 @@
 
 
 - [Overview](#overview)
+- [Deployment](#deployment)
 - [MVP](#mvp)
   - [Goals](#goals)
   - [Libraries and Dependencies](#libraries-and-dependencies)
@@ -22,6 +23,12 @@
 
 _**My Colorado Wildlife** See Animals other people have seen in Colorado and keep track of your own list.
 
+
+<br>
+
+## Deployment:
+Back end with heroku: https://git.heroku.com/my-co-wildlife-api.git
+Front end with Netlify: my-co-wildlife.netlify.app
 
 <br>
 
