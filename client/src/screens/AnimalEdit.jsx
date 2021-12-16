@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import { useParams } from 'react-router'
 
-export default function AnimalEdit({animals}) {
+export default function AnimalEdit({animals, handleAnimalUpdate}) {
   const [formData, setFormData] = useState({
     name: '',
     description: '',
@@ -18,8 +18,9 @@ export default function AnimalEdit({animals}) {
   //     const animalItem = animals.find(animal => animal.id === Number(id))
   //     setFormData({ name: animalItem.name, description: animalItem.description, seen: animalItem.seen, notes: animalItem.notes })
   //   };
-  //   prefillFormData();
-  // }, [])
+  //   if (animals.length) prefillFormData();
+  // }, [animals, id])
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,7 +38,7 @@ export default function AnimalEdit({animals}) {
   return (
     <form onSubmit={(e) => {
       e.preventDefault();
-      //handleAnimalEdit(formData);
+      handleAnimalUpdate(formData);
     }}
     >
       <h3>Correct your Animal info here:</h3>

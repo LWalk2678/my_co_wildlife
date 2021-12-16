@@ -10,6 +10,11 @@ export const postAnimal = async (animalData) => {
   return resp.data
 };
 
+export const putAnimal = async (id, animalData) => {
+  const resp = await api.put(`/animals/${id}`, { animal: animalData });
+  return resp.data;
+}
+
 export const deleteAnimal = async (id) => {
   await api.delete(`/animals/${id}`);
 }

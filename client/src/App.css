@@ -5,4 +5,15 @@
   font-family: "Kite One", sans-serif;
   color: #ffd903;
   background-color: #022667;
+  padding-bottom: 150px;
+}
+
+a:any-link {
+  color: #ffd903;
+}
+
+@media only screen and (max-width: 600px) {
+  .App {
+    background-color: #bf0d33;
+  }
 }
