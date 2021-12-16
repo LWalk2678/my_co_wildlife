@@ -5,18 +5,19 @@ import { Switch, Route, useHistory } from 'react-router-dom';
 import Login from './screens/Login';
 import {loginUser, registerUser, removeToken, verifyUser} from './services/auth'
 import Register from './screens/Register';
+import MainContainer from './containers/MainContainer';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
-  
-  //const history = useHistory();
+    //const history = useHistory();
 
   useEffect(() => {
     const handleVerify = async () => {
       const userData = await verifyUser();
       setCurrentUser(userData)
-    }
-  })
+    };
+    handleVerify();
+  }, [])
 
   const handleLogin = async (formData) => {
     const userData = await loginUser(formData);
@@ -45,6 +46,9 @@ function App() {
           </Route>
           <Route path='/register'>
             <Register handleRegister={handleRegister}/>
+          </Route>
+          <Route path='/'>
+            <MainContainer/>
           </Route>
         </Switch>
       </Layout>
