@@ -1,6 +1,6 @@
 class AnimalsController < ApplicationController
   before_action :set_animal, only: :show
-  before_action :authorize_request, only: :create
+  before_action :authorize_request, only: [:create, :update, :destroy]
   before_action :set_user_animal, only: [:update, :destroy]
 
   # GET /animals  - for main page to show all animals

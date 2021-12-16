@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Switch, Route, useHistory } from 'react-router-dom'
 import AnimalCreate from '../screens/AnimalCreate'
 import Animals from '../screens/Animals'
-import { getAllAnimals, postAnimal } from '../services/animal'
+import { getAllAnimals, postAnimal, deleteAnimal } from '../services/animal'
 
 export default function MainContainer() {
   const [animals, setAnimals] = useState([])
@@ -22,6 +22,11 @@ export default function MainContainer() {
     //history.push('/animals');
   };
 
+  const handleAnimalDelete = async (id) => {
+    await deleteAnimal(id);
+    setAnimals(prevState=> prevState.filter(animal => animal.id !== id))
+  }
+
   return (
     <div>
       <Switch>
@@ -29,7 +34,7 @@ export default function MainContainer() {
           <AnimalCreate handleAnimalCreate={handleAnimalCreate}/>
         </Route>
         <Route path='/animals'>
-          <Animals animals={animals} />
+          <Animals animals={animals} handleAnimalDelete={handleAnimalDelete}/>
         </Route>
         <Route path='/'>
           <h1>Home</h1>
