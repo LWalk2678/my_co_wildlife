@@ -11,15 +11,15 @@ export default function AnimalEdit({animals, handleAnimalUpdate}) {
   })
 
   const { name, description, seen, notes } = formData
-  //const { id } = useParams();
+  const { id } = useParams();
     
-  // useEffect(() => {
-  //   const prefillFormData = () => {
-  //     const animalItem = animals.find(animal => animal.id === Number(id))
-  //     setFormData({ name: animalItem.name, description: animalItem.description, seen: animalItem.seen, notes: animalItem.notes })
-  //   };
-  //   if (animals.length) prefillFormData();
-  // }, [animals, id])
+  useEffect(() => {
+    const prefillFormData = () => {
+      const animalItem = animals.find(animal => animal.id === Number(id))
+      setFormData({ name: animalItem.name, description: animalItem.description, seen: animalItem.seen, notes: animalItem.notes })
+    };
+    if (animals.length) prefillFormData();
+  }, [animals, id])
 
 
   const handleChange = (e) => {
@@ -38,7 +38,7 @@ export default function AnimalEdit({animals, handleAnimalUpdate}) {
   return (
     <form onSubmit={(e) => {
       e.preventDefault();
-      handleAnimalUpdate(formData);
+      handleAnimalUpdate(id, formData);
     }}
     >
       <h3>Correct your Animal info here:</h3>
