@@ -8,7 +8,10 @@ export default function Layout(props) {
       <header>
         <h1>My Colorado Wildlife</h1>
         {currentUser ? (
-          <div>something</div>
+          <div>
+            <p>{currentUser.username}</p>
+            <button>Logout</button>
+          </div>
         ) : (
           <Link to='/login'>Login/Register</Link>
         )}
